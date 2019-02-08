@@ -8,7 +8,7 @@ beforeEach(() => {
     .replyWithError("Something terrible happened :(");
 });
 
-test("basic post mock works with nock", async () => {
+test("basic post with error on request mock works with nock", async () => {
     axios.post("http://www.example.com/login", { user: "foo", password: "hashed-bar" })
     .catch((error) => {
         expect(error.message).toBe("Something terrible happened :(");
